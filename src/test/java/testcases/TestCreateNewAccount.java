@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 
 import base.TestBase;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -23,7 +24,7 @@ public class TestCreateNewAccount extends TestBase {
 	HomePage homePageObj;
 	AuthenticationPage authenticationPageObj;
 	CreateAccountPage createAccountPageObj;
-
+	Logger logger = Logger.getLogger(TestCreateNewAccount.class);
 	
 	@BeforeMethod
 	  public void beforeMethod(Method method) {
@@ -65,7 +66,7 @@ public class TestCreateNewAccount extends TestBase {
 
 		Assert.assertTrue(isAccountCreated, "Account creation is failed");
 		test.log(LogStatus.PASS, "Account creation is done successfully");
-
+		logger.info("Account creation is done successfully");
 	}
 
   @AfterMethod

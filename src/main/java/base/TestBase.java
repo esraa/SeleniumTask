@@ -4,6 +4,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -40,7 +42,8 @@ public class TestBase {
     public static Properties prop;
     public static ExtentReports extent;
     public static ExtentTest test;
-
+    public static String log4jConfPath;
+    final static Logger logger = Logger.getLogger(TestBase.class);
 
     private static void initExtentReports() {
     	String currentDate = java.time.LocalDateTime.now().toString(); 
@@ -56,7 +59,11 @@ public class TestBase {
 
         prop = readProperties(System.getProperty("user.dir") + "\\src\\main\\resources\\config\\config.properties");
         initExtentReports();
-	}
+
+        log4jConfPath = prop.getProperty("log4jPropertiesPath");
+        PropertyConfigurator.configure(log4jConfPath);
+
+    }
 
 	@AfterSuite
 	 public void afterSuite() {
@@ -73,6 +80,7 @@ public class TestBase {
         FileInputStream testProperties = new FileInputStream(filePath);
         prop = new Properties();
         prop.load(testProperties);
+        logger.info("Properties file is loaded");
         return prop;
 
 	}
@@ -108,8 +116,8 @@ public class TestBase {
 
         driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
         // Open the URL
+        logger.info("Opening Browser [" + browserType + "] with url [" + url + "]");
         driver.get(url);
-        driver.manage().window().maximize();
   
     }
 
@@ -120,6 +128,7 @@ public class TestBase {
     public void closeBrowser() {
         // Close browser
         driver.quit();
+        logger.info("Closing Browser..");
     }
 
     /**

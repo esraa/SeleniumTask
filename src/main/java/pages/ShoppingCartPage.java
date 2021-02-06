@@ -36,20 +36,20 @@ public class ShoppingCartPage extends PageBase {
 
     public String proceedToCartAndConfirmOrder(String payMethod)
     {
-        clickElement(proceedToCheckoutSummary);
-        clickElement(proceedToCheckout);
-        jsClick(agreeTerms);
-        clickElement(proceedToCheckout);
+        clickElement(proceedToCheckoutSummary, "proceed to checkout");
+        clickElement(proceedToCheckout, "proceed to checkout");
+        jsClick(agreeTerms, "agree on terms and conditions");
+        clickElement(proceedToCheckout, "proceed to checkout");
 
         if(payMethod.equals("wire")) {
-            clickElement(bankWire);
+            clickElement(bankWire, "bank wire");
         } else if (payMethod.equals("cheque")) {
-            clickElement(cheque);
+            clickElement(cheque, "chequq");
         }
-        String paymentMethodTitle = getElementText(paymentMethodTitleBy);
+        String paymentMethodTitle = getElementText(paymentMethodTitleBy, "payment method title");
         if(paymentMethodTitle.contains(payMethod.toUpperCase())){
-            clickElement(proceedToCheckout);
-            String orderDetails = getElementText(orderDetailsBy);
+            clickElement(proceedToCheckout, "proceed to checkout");
+            String orderDetails = getElementText(orderDetailsBy, "order detials");
             String parsed = StringUtils.substringAfter(orderDetails, "order reference ");
             return parsed.substring(0, parsed.indexOf(' '));
         }
@@ -58,8 +58,8 @@ public class ShoppingCartPage extends PageBase {
 
     public boolean goToOrderHistory()
     {
-        clickElement(backToOrderBy);
-        String title = getElementText(By.xpath("//span[@class='navigation_page']"));
+        clickElement(backToOrderBy, "back to orders");
+        String title = getElementText(By.xpath("//span[@class='navigation_page']"), "order history");
 
         return title.equals("Order history");
     }

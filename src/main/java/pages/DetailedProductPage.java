@@ -35,20 +35,20 @@ public class DetailedProductPage extends PageBase {
 
     public boolean addProductToCart(String product, String color, String size)
     {
-        selectItemFromList(sizeBy, size);
-        clickElement(By.name(color));
-        clickElement(addToCartBy);
+        selectItemFromList(sizeBy, size, "size");
+        clickElement(By.name(color), "color");
+        clickElement(addToCartBy, "add to cart");
 
-        String getSuccessMessage = getElementText(successMessageBy);
-        String productValue = getElementText(productInConfirmationPage);
+        String getSuccessMessage = getElementText(successMessageBy, "success message");
+        String productValue = getElementText(productInConfirmationPage, "product");
         return (getSuccessMessage.trim().equalsIgnoreCase(properties.getProperty("successMessage")) &&
                 productValue.equalsIgnoreCase(product));
     }
 
     public boolean proceedToCart()
     {
-        clickElement(proceedToCheckout);
-        return isElementDisplayed(By.id("cart_title"));
+        clickElement(proceedToCheckout, "proceed to checkout");
+        return isElementDisplayed(By.id("cart_title"), "page title");
     }
 }
 

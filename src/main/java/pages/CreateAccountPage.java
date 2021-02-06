@@ -39,26 +39,26 @@ public class CreateAccountPage extends PageBase {
                               String postalCode, String phoneNo, String addAlias)
     {
         if (title.equals("Mr")) {
-            clickElement(mrTitle);
+            clickElement(mrTitle, "Mr");
         } else if (title.equals("Mrs")) {
-            clickElement(mrsTitle);
+            clickElement(mrsTitle, "Mrs");
         }
-        setElement(firstNameBy, fname);
-        setElement(lastNameBy, lname);
-        setElement(passwordBy, password);
-        setElement(addressFirstNameBy, addressFirstName);
-        setElement(addressLastNameBy, addressLastName);
-        setElement(addressBy, address);
-        setElement(cityBy, city);
-        selectItemFromList(stateBy, state);
-        setElement(zipCodeBy, postalCode);
-        setElement(phoneMobileBy, phoneNo);
-        setElement(addAliasBy, addAlias);
+        setElement(firstNameBy, fname, "first name");
+        setElement(lastNameBy, lname, "last name");
+        setElement(passwordBy, password, "password");
+        setElement(addressFirstNameBy, addressFirstName, "address first name");
+        setElement(addressLastNameBy, addressLastName, "address last name");
+        setElement(addressBy, address, "address");
+        setElement(cityBy, city, "city");
+        selectItemFromList(stateBy, state, "state");
+        setElement(zipCodeBy, postalCode, "postal code");
+        setElement(phoneMobileBy, phoneNo, "phone number");
+        setElement(addAliasBy, addAlias, "address alias");
 
-        clickElement(submitBy);
+        clickElement(submitBy, "submit");
 
         By welcomeToAccount = By.xpath("//p[@class='info-account']");
-        return isElementDisplayed(welcomeToAccount);
+        return isElementDisplayed(welcomeToAccount, "welcome");
     }
 
 }

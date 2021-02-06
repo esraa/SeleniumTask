@@ -2,6 +2,7 @@ package testcases;
 
 import base.TestBase;
 import com.relevantcodes.extentreports.LogStatus;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -24,7 +25,8 @@ public class TestCheckoutConfirmOrder extends TestBase {
 	DetailedProductPage detailedProductPageObj;
 	ShoppingCartPage shoppingCartPageObj;
 	OrderHistoryPage orderHistoryPageObj;
-	
+	Logger logger = Logger.getLogger(TestCheckoutConfirmOrder.class);
+
 	@BeforeMethod
 	  public void beforeMethod(Method method) {
 
@@ -55,35 +57,39 @@ public class TestCheckoutConfirmOrder extends TestBase {
 
 		homePageObj.clickOnSignIn();
 
-
 		Assert.assertTrue(authenticationPageObj.checkAuthenticationPageIsOpened(), "Navigation to authentication page is failed");
 		test.log(LogStatus.PASS, "Navigation to authentication page done successfully");
 
 		Assert.assertTrue(authenticationPageObj.login(email, password), "User login is failed");
 		test.log(LogStatus.PASS, "User logged in successfully");
+		logger.info("User logged in..");
 
 		Assert.assertTrue(homePageObj.selectItemFromMenu(category, subCategory), "Selecting "+subCategory+" from "+category+" is not done");
 		test.log(LogStatus.PASS, "Selecting "+subCategory+" from "+category+" is done successfully");
+		logger.info("Selecting "+subCategory+" from "+category);
 
 		Assert.assertTrue(productsPageObj.selectMoreDetailsForProduct(product), "Clicking on More for the product failed");
 		test.log(LogStatus.PASS, "Clicking on More for the product done successfully");
 
 		Assert.assertTrue(detailedProductPageObj.addProductToCart(product, color, size), "Adding to cart is failed");
-		test.log(LogStatus.PASS, "Adding to cart after selecting size and color is done successfully");
+		test.log(LogStatus.PASS, "Adding item to cart after selecting size and color is done successfully");
+		logger.info("Adding item to cart after selecting size and color");
 
 		Assert.assertTrue(detailedProductPageObj.proceedToCart(), "Going to shopping cart failed");
 		test.log(LogStatus.PASS, "Going to shopping cart is done successfully");
+		logger.info("Going to shopping cart.. ");
 
 		String referenceNo = shoppingCartPageObj.proceedToCartAndConfirmOrder(paymentMethod);
 
 		Assert.assertNotNull(referenceNo, "Order is not added");
 		test.log(LogStatus.PASS, "Order is completed successfully");
-
+		logger.info("Order reference number is " + referenceNo);
 		Assert.assertTrue(shoppingCartPageObj.goToOrderHistory(), "Going to order history page is failed");
 		test.log(LogStatus.PASS, "Going to order history page done successfully");
 
 		Assert.assertTrue(orderHistoryPageObj.checkOrderInOrderHistory(referenceNo), "Order is not placed in order history page");
 		test.log(LogStatus.PASS, "Order with the correct reference number is placed in order history page successfully");
+		logger.info("Order reference number is placed in order history page ");
 
 	}
 

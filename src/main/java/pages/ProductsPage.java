@@ -36,12 +36,12 @@ public class ProductsPage extends PageBase {
         for (WebElement webElement : productsList) {
             WebElement productItem = webElement.findElement(By.xpath("descendant::div[@class='right-block']//a[@title='"+product+"']"));
             if (productItem.getText().equalsIgnoreCase(product)) {
-                hoverElement(productItem);
+                hoverElement(productItem, product);
                 wait.until(ExpectedConditions.elementToBeClickable(
                         By.xpath("//ul[@class='product_list grid row']/li["+(i+1)+"]//div[@class='right-block']//a[contains(@class, 'lnk_view')]")));
 
                 WebElement more = webElement.findElement(By.xpath("descendant::div[@class='right-block']//a[contains(@class, 'lnk_view')]"));
-                clickElement(more);
+                clickElement(more, "more");
                 break;
             }
             i++;

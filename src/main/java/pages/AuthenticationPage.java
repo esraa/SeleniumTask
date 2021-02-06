@@ -31,27 +31,28 @@ public class AuthenticationPage extends PageBase {
 
     public boolean checkAuthenticationPageIsOpened()
     {
-        return isElementDisplayed(createAccountHeader);
+
+        return isElementDisplayed(createAccountHeader, "Create account");
     }
 
     public boolean createAccount(String email)
     {
-        setElement(emailCreate, email);
-        clickElement(submitCreate);
+        setElement(emailCreate, email, "email");
+        clickElement(submitCreate, "register");
 
         By createAccountHeader = By.xpath("//div[@id='noSlide']/h1");
-        return isElementDisplayed(createAccountHeader);
+        return isElementDisplayed(createAccountHeader, "create account");
     }
 
     public boolean login(String email, String password)
     {
-        setElement(emailToLogin, email);
-        setElement(passwordToLogin, password);
+        setElement(emailToLogin, email, "email");
+        setElement(passwordToLogin, password, "password");
 
-        clickElement(submitLogin);
+        clickElement(submitLogin, "login");
 
         By welcomeToAccount = By.xpath("//p[@class='info-account']");
-        return isElementDisplayed(welcomeToAccount);
+        return isElementDisplayed(welcomeToAccount, "welcome");
     }
 
 }

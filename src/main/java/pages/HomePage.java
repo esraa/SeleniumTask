@@ -32,7 +32,7 @@ public class HomePage extends PageBase {
 
     public void clickOnSignIn()
     {
-        clickElement(signIn);
+        clickElement(signIn, "sign in");
 
     }
 
@@ -43,9 +43,9 @@ public class HomePage extends PageBase {
         for (WebElement webElement : categoriesList) {
             WebElement cat = webElement.findElement(By.xpath("descendant::a"));
             if (cat.getText().equalsIgnoreCase(category)) {
-                hoverElement(cat);
+                hoverElement(cat, category);
                 WebElement subCat = webElement.findElement(By.xpath("descendant::ul/li/a[@title='" + subcategory + "']"));
-                clickElement(subCat);
+                clickElement(subCat, subcategory);
                 break;
             }
         }

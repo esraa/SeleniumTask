@@ -1,0 +1,84 @@
+2021-02-07 00:03:08 INFO  TestBase:119 - Opening Browser [chrome] with url [http://automationpractice.com/index.php]
+2021-02-07 00:03:15 INFO  PageBase:52 - Click on sign in
+2021-02-07 00:03:16 INFO  PageBase:28 - Create accountelement is visible
+2021-02-07 00:03:16 INFO  PageBase:28 - emailelement is visible
+2021-02-07 00:03:16 INFO  PageBase:39 - Set email : esraa.elmelegy+41@gmail.com
+2021-02-07 00:03:17 INFO  PageBase:52 - Click on register
+2021-02-07 00:03:17 INFO  PageBase:28 - create accountelement is visible
+2021-02-07 00:03:18 INFO  PageBase:52 - Click on Mrs
+2021-02-07 00:03:18 INFO  PageBase:28 - first nameelement is visible
+2021-02-07 00:03:19 INFO  PageBase:39 - Set first name : Esraa
+2021-02-07 00:03:19 INFO  PageBase:28 - last nameelement is visible
+2021-02-07 00:03:19 INFO  PageBase:39 - Set last name : Adel
+2021-02-07 00:03:19 INFO  PageBase:28 - passwordelement is visible
+2021-02-07 00:03:20 INFO  PageBase:39 - Set password : 12345
+2021-02-07 00:03:20 INFO  PageBase:28 - address first nameelement is visible
+2021-02-07 00:03:20 INFO  PageBase:39 - Set address first name : Smart
+2021-02-07 00:03:20 INFO  PageBase:28 - address last nameelement is visible
+2021-02-07 00:03:21 INFO  PageBase:39 - Set address last name : Village
+2021-02-07 00:03:21 INFO  PageBase:28 - addresselement is visible
+2021-02-07 00:03:21 INFO  PageBase:39 - Set address : address1
+2021-02-07 00:03:21 INFO  PageBase:28 - cityelement is visible
+2021-02-07 00:03:22 INFO  PageBase:39 - Set city : cairo
+2021-02-07 00:03:22 INFO  PageBase:46 - Select from list state : Iowa
+2021-02-07 00:03:22 INFO  PageBase:28 - postal codeelement is visible
+2021-02-07 00:03:22 INFO  PageBase:39 - Set postal code : 12345
+2021-02-07 00:03:22 INFO  PageBase:28 - phone numberelement is visible
+2021-02-07 00:03:23 INFO  PageBase:39 - Set phone number : 012222222
+2021-02-07 00:03:23 INFO  PageBase:28 - address aliaselement is visible
+2021-02-07 00:03:23 INFO  PageBase:39 - Set address alias : SM
+2021-02-07 00:03:26 INFO  PageBase:52 - Click on submit
+2021-02-07 00:03:26 INFO  PageBase:28 - welcomeelement is visible
+2021-02-07 00:03:26 INFO  TestCreateNewAccount:69 - Account creation is done successfully
+2021-02-07 00:03:27 INFO  TestBase:131 - Closing Browser..
+2021-02-07 00:03:34 INFO  TestBase:119 - Opening Browser [chrome] with url [http://automationpractice.com/index.php]
+2021-02-07 00:03:41 INFO  PageBase:52 - Click on sign in
+2021-02-07 00:03:41 INFO  PageBase:28 - Create accountelement is visible
+2021-02-07 00:03:41 INFO  PageBase:28 - emailelement is visible
+2021-02-07 00:03:42 INFO  PageBase:39 - Set email : esraa.elmelegy@gmail.com
+2021-02-07 00:03:42 INFO  PageBase:28 - passwordelement is visible
+2021-02-07 00:03:42 INFO  PageBase:39 - Set password : 12345
+2021-02-07 00:03:46 INFO  PageBase:52 - Click on login
+2021-02-07 00:03:46 INFO  PageBase:28 - welcomeelement is visible
+2021-02-07 00:03:46 INFO  TestCheckoutConfirmOrder:65 - User logged in..
+2021-02-07 00:03:46 INFO  PageBase:90 - Hover on women
+2021-02-07 00:03:49 INFO  PageBase:59 - Click on Blouses
+2021-02-07 00:03:49 INFO  TestCheckoutConfirmOrder:69 - Selecting Blouses from women
+2021-02-07 00:03:49 INFO  PageBase:90 - Hover on Blouse
+2021-02-07 00:03:51 INFO  PageBase:59 - Click on more
+2021-02-07 00:03:52 INFO  PageBase:46 - Select from list size : M
+2021-02-07 00:03:52 INFO  PageBase:52 - Click on color
+2021-02-07 00:03:52 INFO  PageBase:52 - Click on add to cart
+2021-02-07 00:03:54 INFO  PageBase:28 - success messageelement is visible
+2021-02-07 00:03:54 INFO  PageBase:72 - success message Actual text is Product successfully added to your shopping cart
+2021-02-07 00:03:54 INFO  PageBase:28 - productelement is visible
+2021-02-07 00:03:54 INFO  PageBase:72 - product Actual text is Blouse
+2021-02-07 00:03:54 INFO  TestCheckoutConfirmOrder:76 - Adding item to cart after selecting size and color
+2021-02-07 00:03:56 INFO  PageBase:52 - Click on proceed to checkout
+2021-02-07 00:03:56 INFO  PageBase:28 - page titleelement is visible
+2021-02-07 00:03:56 INFO  TestCheckoutConfirmOrder:80 - Going to shopping cart.. 
+2021-02-07 00:03:58 INFO  PageBase:52 - Click on proceed to checkout
+2021-02-07 00:03:59 INFO  PageBase:52 - Click on proceed to checkout
+2021-02-07 00:03:59 INFO  PageBase:83 - Click on agree on terms and conditions
+2021-02-07 00:04:01 INFO  PageBase:52 - Click on proceed to checkout
+2021-02-07 00:04:02 INFO  PageBase:52 - Click on bank wire
+2021-02-07 00:04:02 INFO  PageBase:28 - payment method titleelement is visible
+2021-02-07 00:04:03 INFO  PageBase:72 - payment method title Actual text is BANK-WIRE PAYMENT.
+2021-02-07 00:04:05 INFO  PageBase:52 - Click on proceed to checkout
+2021-02-07 00:04:05 INFO  PageBase:28 - order detialselement is visible
+2021-02-07 00:04:05 INFO  PageBase:72 - order detials Actual text is Your order on My Store is complete.
+Please send us a bank wire with
+- Amount $29.00
+- Name of account owner Pradeep Macharla
+- Include these details xyz
+- Bank name RTP
+- Do not forget to insert your order reference HLJEOOOEH in the subject of your bank wire.
+An email has been sent with this information.
+Your order will be sent as soon as we receive payment.
+If you have questions, comments or concerns, please contact our expert customer support team. .
+2021-02-07 00:04:05 INFO  TestCheckoutConfirmOrder:86 - Order reference number is HLJEOOOEH
+2021-02-07 00:04:07 INFO  PageBase:52 - Click on back to orders
+2021-02-07 00:04:07 INFO  PageBase:28 - order historyelement is visible
+2021-02-07 00:04:07 INFO  PageBase:72 - order history Actual text is Order history
+2021-02-07 00:04:07 INFO  TestCheckoutConfirmOrder:92 - Order reference number is placed in order history page 
+2021-02-07 00:04:08 INFO  TestBase:131 - Closing Browser..
